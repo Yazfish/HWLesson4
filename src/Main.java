@@ -48,18 +48,21 @@ public class Main {
         // Для года создания телефона используйте переменную clientDeviceYear,
         // в которой необходимо указать 2015 год.
 
-        int clientDeviceYear = 2018;
+        int deviseYear = 2019;
+        int clientDeviceYear = 2015;
         int clientPhomeOS = 1;
-        if (clientDeviceYear >= 2015 && clientPhomeOS == 0) {
+        if (deviseYear >= clientDeviceYear && clientPhomeOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке:");
-        } else if (clientDeviceYear < 2015 && clientPhomeOS == 0) {
+        } else if (deviseYear < clientDeviceYear && clientPhomeOS == 0) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке:");
-        }
-        if (clientDeviceYear >= 2015 && clientPhomeOS == 1) {
+        } else if (deviseYear >= clientDeviceYear && clientPhomeOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке:");
-        } else if (clientDeviceYear < 2015 && clientPhomeOS == 1) {
+        } else if (deviseYear < clientDeviceYear && clientPhomeOS == 1) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке:");
+        } else {
+            System.out.println("Для вас нет обновлений");
         }
+
 
         System.out.println("\n Задача 3 \n");
         // Задача 3
@@ -75,11 +78,14 @@ public class Main {
         // четырехсотый год. Год должен быть больше, чем 1584
         // (в котором был введен високосный год).
 
-        int year = 2076;
-        if (year % 400 != 0 && year % 4 != 0) {
-            System.out.println("Год не високосный");
+        int year = 1943;
+        if (year > 1584 && ((year % 100 != 0 && year % 4 == 0) || year % 400 == 0)) {
+            System.out.println(year + " год високосный");
+        } else if (year <= 1584) {
+                System.out.println("В этом году еще не было определения " +
+                        "високосного года.");
         } else {
-            System.out.println("Год високосный");
+            System.out.println(year + " год не високосный");
         }
 
         System.out.println("\n Задача 4 \n");
@@ -96,14 +102,14 @@ public class Main {
         // Напишите программу, которая выдает сообщение в консоль: "Потребуется дней: " + срок доставки.
         // Объявите целочисленную переменную deliveryDistance = 95, которая содержит дистанцию до клиента.
 
-        int customerDistance = 95;
+        int deliveryDistance = 95;
         int deliveryTime = 1;
 
-        if (customerDistance <= 20) {
+        if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней: " + deliveryTime + ", для доставки вашей карты.");
-        } else if (customerDistance > 20 && customerDistance <= 60) {
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
             System.out.println("Потребуется дней: " + (deliveryTime + 1) + ", для доставки вашей карты.");
-        } else if (customerDistance > 60 && customerDistance <= 100) {
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             System.out.println("Потребуется дней: " + (deliveryTime + 2) + ", для доставки вашей карты.");
         } else {
             System.out.println("На такое расстояние доставки нет.");
@@ -143,7 +149,6 @@ public class Main {
                 break;
             default:
                 System.out.println("Такого месяца не существует");
-
 
 
         }
